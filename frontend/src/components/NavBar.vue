@@ -1,15 +1,15 @@
 <template>
-  <nav class="bg-white shadow-sm border-b border-gray-200 sticky top-0 z-50">
+  <nav class="bg-gray-900 shadow-sm border-b border-gray-800 sticky top-0 z-50 font-sans">
     <div class="container mx-auto px-4">
       <div class="flex justify-between items-center h-16">
         <!-- Logo Section -->
         <div class="flex items-center space-x-3">
           <img 
             src="/logo.svg" 
-            alt="Ordo Logo" 
-            class="h-8 w-8"
+            alt="Kirki Logo"
+            class="h-8 w-8 filter invert"
           />
-          <span class="text-xl font-bold text-dark-900">Ordo</span>
+          <span class="text-xl font-bold text-white">Kirki</span>
         </div>
         
         <!-- Desktop Navigation -->
@@ -18,10 +18,11 @@
             v-for="item in navItems" 
             :key="item.name"
             :to="item.path"
-            class="text-dark-600 hover:text-primary-500 font-medium transition-colors duration-200"
-            :class="{ 'text-primary-500': $route.path === item.path }"
+            class="text-gray-300 hover:text-pink-400 font-semibold transition-colors duration-200 flex items-center space-x-2"
+            :class="{ 'text-pink-400': $route.path === item.path }"
           >
-            {{ item.name }}
+            <component :is="item.icon" class="w-5 h-5" />
+            <span>{{ item.name }}</span>
           </router-link>
         </div>
         

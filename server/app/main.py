@@ -15,7 +15,7 @@ logging.basicConfig(
     format="%(asctime)s - %(name)s - %(levelname)s - %(funcName)s:%(lineno)d - %(message)s",
     handlers=[
         logging.StreamHandler(sys.stdout),
-        logging.FileHandler(f"ordo_app_{datetime.now().strftime('%Y%m%d')}.log")
+        logging.FileHandler(f"kirki_app_{datetime.now().strftime('%Y%m%d')}.log")
     ]
 )
 

@@ -12,7 +12,7 @@ Kirki is a sophisticated, full-stack platform that automatically transcribes, an
 
 Watch Kirki in action! See how it transforms meeting recordings into actionable insights:
 
-[![Demo Video](https://img.shields.io/badge/▶%20Watch%20Demo-FF0000?style=for-the-badge&logo=youtube&logoColor=white)](https://youtu.be/85sU_yyz0aE)
+[![Demo Video](https://img.shields.io/badge/▶%20Watch%20Demo-FF0000?style=for-the-badge&logo=youtube&logoColor=white)](https://youtu.be/pZ7UBCe85fQ)
 
 ## 🏆 Tech Stack
 

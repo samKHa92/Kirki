@@ -7,7 +7,7 @@ class Settings(BaseSettings):
     """Application settings loaded from environment variables"""
     
     # API Settings
-    api_title: str = "Ordo Audio Processing API"
+    api_title: str = "Kirki Audio Processing API"
     api_version: str = "1.0.0"
     api_host: str = "0.0.0.0"
     api_port: int = 8000
@@ -46,7 +46,7 @@ class Settings(BaseSettings):
         
         if not all([self.postgres_host, self.postgres_db, self.postgres_user, self.postgres_password]):
             # Fallback to SQLite for development
-            return "sqlite:///./ordo.db"
+            return "sqlite:///./kirki.db"
             
         return f"postgresql://{self.postgres_user}:{self.postgres_password}@{self.postgres_host}:{self.postgres_port}/{self.postgres_db}"
     

@@ -2,7 +2,7 @@
   <section class="mb-12 animate-slide-up">
     <div class="max-w-4xl mx-auto">
       <div class="text-center mb-8">
-        <h2 class="text-3xl font-bold text-dark-900 mb-4">Upload Your Meeting Recording</h2>
+        <h2 class="text-3xl font-bold text-white mb-4">Upload Your Meeting Recording</h2>
         <p class="text-dark-600 mb-6">
           Drop your meeting files here for instant AI transcription and analysis
         </p>
@@ -69,7 +69,7 @@
             </svg>
           </div>
           <div>
-            <h3 class="text-lg font-semibold text-dark-900 mb-2">
+            <h3 class="text-lg font-semibold text-white mb-2">
               {{ isDragging ? 'Drop your meeting files here' : 'Upload your meeting recordings' }}
             </h3>
             <p class="text-dark-500 mb-4">

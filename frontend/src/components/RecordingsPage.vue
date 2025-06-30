@@ -1,31 +1,31 @@
 <template>
-  <div class="min-h-screen bg-secondary-50">
+  <div class="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-gray-100">
     <!-- Navigation Bar -->
     <NavBar />
     
     <!-- Main Content -->
-    <main class="container mx-auto px-4 py-8">
+    <main class="container mx-auto px-4 py-12">
       <!-- Header Section -->
       <div class="mb-8">
-        <h1 class="text-4xl font-bold text-dark-900 mb-4">Your Recordings</h1>
-        <p class="text-lg text-dark-600 max-w-2xl">
+        <h1 class="text-3xl font-bold text-white mb-4">Your Recordings</h1>
+        <p class="text-lg text-gray-400 max-w-2xl">
           View, search, and manage all your meeting recordings and transcripts in one place.
         </p>
       </div>
 
       <!-- Search and Filter Bar -->
-      <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-6 mb-8">
+      <div class="bg-gray-800 rounded-xl shadow-sm border border-gray-700 p-6 mb-8">
         <div class="flex flex-col md:flex-row gap-4 items-start md:items-center justify-between">
           <div class="flex-1 max-w-md">
             <div class="relative">
-              <svg class="w-5 h-5 text-dark-400 absolute left-3 top-1/2 transform -translate-y-1/2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg class="w-5 h-5 text-gray-400 absolute left-3 top-1/2 transform -translate-y-1/2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
               </svg>
               <input
                 v-model="searchQuery"
                 type="text"
                 placeholder="Search recordings..."
-                class="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors"
+                class="w-full pl-10 pr-4 py-2 border border-gray-700 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors"
                 @input="performSearch"
               />
             </div>
@@ -35,7 +35,7 @@
             <select 
               v-model="statusFilter"
               @change="applyFilters"
-              class="px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors"
+              class="px-3 py-2 border border-gray-700 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors"
             >
               <option value="">All Status</option>
               <option value="completed">Completed</option>
@@ -66,7 +66,7 @@
 
       <!-- Statistics Cards -->
       <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
-        <div class="bg-white rounded-xl p-6 shadow-sm border border-gray-200">
+        <div class="bg-gray-800 rounded-xl p-6 shadow-sm border border-gray-700">
           <div class="flex items-center">
             <div class="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center">
               <svg class="w-6 h-6 text-primary-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -74,13 +74,13 @@
               </svg>
             </div>
             <div class="ml-4">
-              <p class="text-sm text-dark-500">Total Recordings</p>
-              <p class="text-2xl font-bold text-dark-900">{{ totalRecordings }}</p>
+              <p class="text-sm text-gray-400">Total Recordings</p>
+              <p class="text-2xl font-bold text-white">{{ totalRecordings }}</p>
             </div>
           </div>
         </div>
         
-        <div class="bg-white rounded-xl p-6 shadow-sm border border-gray-200">
+        <div class="bg-gray-800 rounded-xl p-6 shadow-sm border border-gray-700">
           <div class="flex items-center">
             <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center">
               <svg class="w-6 h-6 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -88,13 +88,13 @@
               </svg>
             </div>
             <div class="ml-4">
-              <p class="text-sm text-dark-500">Completed</p>
-              <p class="text-2xl font-bold text-dark-900">{{ completedCount }}</p>
+              <p class="text-sm text-gray-400">Completed</p>
+              <p class="text-2xl font-bold text-white">{{ completedCount }}</p>
             </div>
           </div>
         </div>
         
-        <div class="bg-white rounded-xl p-6 shadow-sm border border-gray-200">
+        <div class="bg-gray-800 rounded-xl p-6 shadow-sm border border-gray-700">
           <div class="flex items-center">
             <div class="w-12 h-12 bg-yellow-100 rounded-lg flex items-center justify-center">
               <svg class="w-6 h-6 text-yellow-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -102,13 +102,13 @@
               </svg>
             </div>
             <div class="ml-4">
-              <p class="text-sm text-dark-500">Processing</p>
-              <p class="text-2xl font-bold text-dark-900">{{ processingCount }}</p>
+              <p class="text-sm text-gray-400">Processing</p>
+              <p class="text-2xl font-bold text-white">{{ processingCount }}</p>
             </div>
           </div>
         </div>
         
-        <div class="bg-white rounded-xl p-6 shadow-sm border border-gray-200">
+        <div class="bg-gray-800 rounded-xl p-6 shadow-sm border border-gray-700">
           <div class="flex items-center">
             <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
               <svg class="w-6 h-6 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -116,8 +116,8 @@
               </svg>
             </div>
             <div class="ml-4">
-              <p class="text-sm text-dark-500">Total Duration</p>
-              <p class="text-2xl font-bold text-dark-900">{{ totalDuration }}</p>
+              <p class="text-sm text-gray-400">Total Duration</p>
+              <p class="text-2xl font-bold text-white">{{ totalDuration }}</p>
             </div>
           </div>
         </div>
@@ -130,21 +130,21 @@
             <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
             <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
           </svg>
-          <p class="text-dark-600">Loading recordings...</p>
+          <p class="text-gray-400">Loading recordings...</p>
         </div>
       </div>
 
       <!-- Empty State -->
       <div v-else-if="!loading && filteredRecordings.length === 0" class="text-center py-12">
-        <div class="w-24 h-24 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-6">
+        <div class="w-24 h-24 bg-gray-700 rounded-full flex items-center justify-center mx-auto mb-6">
           <svg class="w-12 h-12 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19V6l12-3v13M9 19c0 1.105-.895 2-2 2s-2-.895-2-2 .895-2 2-2 2 .895 2 2zm12-3c0 1.105-.895 2-2 2s-2-.895-2-2 .895-2 2-2 2 .895 2 2z"></path>
           </svg>
         </div>
-        <h3 class="text-xl font-semibold text-dark-900 mb-2">
+        <h3 class="text-xl font-semibold text-white mb-2">
           {{ searchQuery || statusFilter ? 'No recordings match your filters' : 'No recordings yet' }}
         </h3>
-        <p class="text-dark-600 mb-6 max-w-md mx-auto">
+        <p class="text-gray-400 mb-6 max-w-md mx-auto">
           {{ searchQuery || statusFilter ? 'Try adjusting your search or filter criteria.' : 'Start by uploading your first meeting recording to see it here.' }}
         </p>
         <router-link to="/" class="btn-primary">
@@ -157,17 +157,17 @@
         <div 
           v-for="recording in paginatedRecordings" 
           :key="recording.id"
-          class="bg-white rounded-xl shadow-sm border border-gray-200 hover:shadow-md transition-shadow duration-200"
+          class="bg-gray-800 rounded-2xl shadow-lg border border-gray-700 hover:scale-105 transition-transform"
         >
           <!-- Recording Card Header -->
-          <div class="p-6 border-b border-gray-100">
+          <div class="p-6 border-b border-gray-700">
             <div class="flex items-start justify-between mb-3">
               <div class="flex-1">
-                <h3 class="font-semibold text-dark-900 mb-1 truncate" :title="recording.original_filename">
+                <h3 class="font-semibold text-white mb-1 truncate" :title="recording.original_filename">
                   {{ recording.original_filename }}
                 </h3>
                 <div class="flex items-center space-x-2 mb-1">
-                  <p class="text-sm text-dark-500">{{ formatDate(recording.created_at) }}</p>
+                  <p class="text-sm text-gray-400">{{ formatDate(recording.created_at) }}</p>
                   <!-- Labels -->
                   <div v-if="recording.labels && recording.labels.length" class="flex items-center space-x-1">
                     <span
@@ -197,7 +197,7 @@
             </div>
             
             <!-- File Info -->
-            <div class="flex items-center text-sm text-dark-500 space-x-4">
+            <div class="flex items-center text-sm text-gray-400 space-x-4">
               <span class="flex items-center">
                 <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
@@ -217,8 +217,8 @@
           <div class="p-6">
             <!-- Transcript Preview -->
             <div v-if="recording.transcript" class="mb-4">
-              <h4 class="text-sm font-medium text-dark-900 mb-2">Transcript Preview</h4>
-              <p class="text-sm text-dark-600 line-clamp-3 bg-gray-50 p-3 rounded-lg">
+              <h4 class="text-sm font-medium text-white mb-2">Transcript Preview</h4>
+              <p class="text-sm text-gray-400 line-clamp-3 bg-gray-700 p-3 rounded-lg">
                 {{ recording.transcript.substring(0, 150) }}{{ recording.transcript.length > 150 ? '...' : '' }}
               </p>
             </div>
